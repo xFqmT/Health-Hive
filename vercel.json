@@ -1,20 +1,15 @@
 {
   "version": 2,
-  "framework": null,
-  "builds": [
-    {
-      "src": "api/index.php",
-      "use": "@vercel/php@0.6.0",
-      "config": {
-        "includeFiles": "**"
-      }
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.5.2"
     }
-  ],
+  },
   "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
     {
       "src": "/css/(.*)",
       "dest": "/public/css/$1"
@@ -28,6 +23,10 @@
       "dest": "/public/images/$1"
     },
     {
+      "src": "/favicon.ico",
+      "dest": "/public/favicon.ico"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
@@ -35,13 +34,7 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_URL": "https://project-ogualn2q1-famuutes-projects.vercel.app",
-    "APP_CONFIG_CACHE": "/tmp/config.php",
-    "APP_EVENTS_CACHE": "/tmp/events.php",
-    "APP_PACKAGES_CACHE": "/tmp/packages.php",
-    "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",
-    "VIEW_COMPILED_PATH": "/tmp",
+    "APP_URL": "https://project-dynvrdrm5-famuutes-projects.vercel.app",
     "CACHE_DRIVER": "array",
     "LOG_CHANNEL": "stderr",
     "SESSION_DRIVER": "cookie"
