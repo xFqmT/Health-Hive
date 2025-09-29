@@ -1,0 +1,17 @@
+Railway MySQL Connection Details:
+================================
+
+Host: shortline.proxy.rlwy.net
+Port: 25802
+Username: root
+Password: [You need to get this from Railway dashboard]
+Database: railway (default)
+
+Steps to Import:
+1. Download MySQL Workbench from the link that just opened
+2. Install MySQL Workbench
+3. Create new connection with above details
+4. Import your db_uks.sql file
+5. Create database named 'db_uks'
+
+Alternative: Use online MySQL client like phpMyAdmin or Adminer
